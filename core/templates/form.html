@@ -1,0 +1,54 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Input Form {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+    {% load crispy_forms_tags %}
+    <div class="section section-md pb-0">
+            <div class="container" >
+                <!-- Title -->
+                <div class="row">
+                    <div class="col">
+                        <h1 class="display-2">Input Forms</h1>
+                    </div>
+                </div>
+                <!-- End of Title -->
+            </div>
+        </div>
+    </div>
+    <div class="section section-md pt-4">
+            <div class="container">
+                <div class="row justify-content-center mb-5 mb-lg-6">
+
+                    <div class="col-lg-4 col-sm-6">
+                            <form method="post" action="../upload/" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <!-- Form -->
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Please upload InfoFile*</label>
+                            <input type="file" name="files" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" id="infofile" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Please upload Marker List to exclude*</label>
+                            <input type="file" name="files" id="markerfile" accept="text/plain" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Please upload CSV folder</label>
+                                <input type="file" name="files" multiple id="csvfolder" accept=".csv" required />
+                        </div>
+                    </div>
+            <input type="submit" class="btn btn-lg btn-primary" value="Start Analysis" />
+        </form>
+        </div>
+                    </div>
+            </div>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

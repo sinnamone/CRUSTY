@@ -1,0 +1,29 @@
+
+    <section class="section section-lg bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mt-5">
+                    <div class="col-12 col-lg-4">
+                        <div class="github-big-icon">
+                            <span class="fas fa-hand-spock"></span>
+                        </div>
+                    </div>
+                    <h2 class="h1 font-weight-light mb-3"><strong>CRUSTY</strong> web-tool</h2>
+                    <p class="lead mb-4">                            <span class="d-block">
+                                <span class="h3 text-primary font-weight-bold align-top">
+                                    CRUSTY - ClusteRing UnsuperviSed meThods for high dimensional cYtometry data
+                                </span>
+                            </span>  is a web-tool for clustering analysis designed for high-dimensional single-cell data. CRUSTY is a computational pipeline that was developed to avoid the disadvantages of manual gating. The pipeline adopts several Python3 packages (Pandas,Numpy,Sklearn for data parsing and exploring and openTSNE,Seaborn,Matplotlib for data visualization), the clustering method adopted is a custom version of Phenograph (https://github.com/jacoblevine/PhenoGraph) where we insert a blocked seed. This method is adaptative both in terms of dimensionality and sample size, making it suitable in a range of settings for which single-cell population structure is of interest, including other cancers or healthy tissues, and for use with other emerging single-cell technologies. CRUSTY is developed at the Humanitas Research Hospital.</p>
+                    <div class="d-flex flex-column flex-wrap flex-md-row mb-5 justify-content-center align-items-center">
+                        <a href="{% url 'contact' %}"  class="btn btn-tertiary mb-3 mt-2 mr-2 mr-md-3 animate-up-2">
+                            Start Analysis</a>
+                    </div>
+                    <div class="row justify-content-center">
+                        <a href="second.html" target="_blank" class="lead px-xl-6 mb-5">
+                            or learn how to use it!!</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>

@@ -1,0 +1,83 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} User Input {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+    <div class="section section-md pb-0">
+            <div class="container" >
+                <!-- Title -->
+                <div class="row">
+                    <div class="col">
+                        <h1 class="display-2">User Input</h1>
+                    </div>
+                </div>
+                <!-- End of Title -->
+            </div>
+        </div>
+    </div>
+        <div class="section section-md pt-4">
+            <div class="container">
+                <div class="row justify-content-center mb-5 mb-lg-6">
+                   <div class="section section-md">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="mb-4">
+                            <span class="h5">Default table</span>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+        <div class="mb-5">
+        <table style="width: 100%">
+    <tr>
+        <th>&nbsp;</th>
+      <th>Parameter</th>
+        <th>&nbsp;&nbsp;&nbsp;</th>
+      <th>User Input</th>
+    </tr>
+    {% for i,k in name.items %}
+      <tr>
+          <th>&nbsp;</th>
+        <td>{{ i }}</td>
+        <th>&nbsp;&nbsp;&nbsp;</th>
+        <td>{{ k }}</td>
+      </tr>
+    {% endfor %}
+        </table>
+                </div>
+            </div>
+
+        <div class="col-lg-4 col-sm-6">
+        <div class="mb-5">
+                        <table>
+    <tr>
+      <th>ID</th>
+                <th>&nbsp;</th>
+      <th>FILE NAME</th>
+    </tr>
+    {% for csvfile in csvfiles %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>&nbsp;</td>
+        <td>{{ csvfile }}</td>
+      </tr>
+    {% endfor %}
+                        </table>
+                </div>
+            </div>
+                        <form action="/external" method="post">
+                                {% csrf_token %}
+                                <input type="submit" class="btn btn-lg btn-primary"  value="Exceute external">
+                        </form>
+        </div>
+        </div>
+
+
+        </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

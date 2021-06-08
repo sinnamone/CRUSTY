@@ -1,0 +1,42 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Output {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+        <div class="section section-md pb-0">
+            <div class="container" >
+                <!-- Title -->
+                <div class="row">
+                    <div class="col">
+                        <h1 class="display-2">Analysis Output</h1>
+                    </div>
+                </div>
+                <!-- End of Title -->
+            </div>
+        </div>
+    </div>
+        <div class="section section-md pb-0">
+     <div class="container" >
+     {% csrf_token %}
+     <p>{{  name }}</p>
+     <p>{{  cognome }}</p>
+         {% for i,k in input1.items %}
+        <p>{{ i }}</p>
+        <p>&nbsp;&nbsp;&nbsp;</p>
+        <p>{{ k }}</p>
+        {% endfor %}
+
+              {% for i,k in input2.items %}
+        <p>{{ i }}</p>
+        <p>&nbsp;&nbsp;&nbsp;</p>
+        <p>{{ k }}</p>
+        {% endfor %}
+     </div>
+        </div>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
